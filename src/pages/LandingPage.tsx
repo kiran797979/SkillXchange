@@ -1,15 +1,1 @@
-@@ .. @@
- import { Button } from '@/components/ui/button';
- import { ArrowRight, Users, Star, Zap, Shield, Clock, Globe } from 'lucide-react';
-
--const LandingPage = () => {
-+interface LandingPageProps {
-+  onAuthClick?: () => void;
-+}
-+
-+const LandingPage = ({ onAuthClick }: LandingPageProps) => {
-   const stats = [
-@@ .. @@
-       <div className="relative z-10">
--        <HeroSection />
-+        <HeroSection onAuthClick={onAuthClick} />
+{"code":"rate-limited","message":"You have hit the rate limit. Please upgrade to keep chatting.","providerLimitHit":false,"isRetryable":true}
