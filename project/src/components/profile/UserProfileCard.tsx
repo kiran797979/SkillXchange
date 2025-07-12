@@ -43,6 +43,7 @@ const UserProfileCard = ({ user }: UserProfileCardProps) => {
               <AvatarImage 
                 src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=200&h=200&fit=crop&crop=face" 
                 alt={user.name} 
+                loading="lazy"
               />
               <AvatarFallback className="bg-purple-600 text-white text-2xl">
                 {user.name.split(' ').map(n => n[0]).join('')}

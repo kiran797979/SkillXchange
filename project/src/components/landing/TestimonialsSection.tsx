@@ -126,7 +126,11 @@ const TestimonialsSection = () => {
                 {/* User Info */}
                 <div className="flex items-center">
                   <Avatar className="w-12 h-12 border-2 border-purple-500/30">
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} />
+                    <AvatarImage 
+                      src={testimonial.avatar} 
+                      alt={testimonial.name} 
+                      loading="lazy"
+                    />
                     <AvatarFallback className="bg-purple-600 text-white">
                       {testimonial.name.split(' ').map(n => n[0]).join('')}
                     </AvatarFallback>

@@ -13,11 +13,13 @@ const LottieAnimation = ({
   width = 300, 
   height = 300, 
   loop = true, 
-  autoplay = true 
-}: LottieAnimationProps) => {
+  autoplay = true,
+  visible = true
+}: LottieAnimationProps & { visible?: boolean }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (!visible) return;
     let animationItem: any = null;
 
     const loadLottie = async () => {
@@ -44,7 +46,7 @@ const LottieAnimation = ({
         animationItem.destroy();
       }
     };
-  }, [animationData, loop, autoplay]);
+  }, [animationData, loop, autoplay, visible]);
 
   return (
     <div 

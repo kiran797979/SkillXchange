@@ -18,6 +18,7 @@ const FloatingSkills = () => {
   ];
 
   const [windowSize, setWindowSize] = useState({ width: 0, height: 0 });
+  const isMobile = windowSize.width < 768;
 
   useEffect(() => {
     const updateWindowSize = () => {
@@ -28,6 +29,8 @@ const FloatingSkills = () => {
     window.addEventListener('resize', updateWindowSize);
     return () => window.removeEventListener('resize', updateWindowSize);
   }, []);
+
+  if (isMobile) return null;
 
   const generateRandomPosition = () => ({
     x: Math.random() * (windowSize.width - 100),
